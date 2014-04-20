@@ -2,6 +2,7 @@
   include 'csvFile.php';
   include 'xlsFile.php';
   include 'xlsxFile.php';
+  include 'htmlFile.php';
   require_once('PHPExcel/Classes/PHPExcel.php');
   include 'excel_reader2.php';
 ?>
@@ -61,10 +62,11 @@
     $size = $_FILES["fichier"]["size"];
     $fileName = $_FILES["fichier"]["name"];
     $path = "data/".$fileName;
+
     switch ($extension_upload) {
-      case 'ssdfsdcsv':
+      case 'csv':
         $upCSV = new csvFile($fileName, $size);
-        $up::uploadFile($file, $path);
+        $upCSV::uploadFile($file, $path);
         break;
       
       case 'xls':
@@ -77,9 +79,12 @@
         $upXSLX::convertXlsxToCsv($file, $fileName);
         break;
         
-      case 'value':
-        # code...
-        break;  
+      case 'html':
+          $upHTML = new htmlFile($fileName, $size);
+          $upHTML::convertHtmlToCsv($file, $fileName);
+
+
+          break;
       default:
         # code...
         break;
