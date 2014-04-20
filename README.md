@@ -5,6 +5,6 @@ Ceci est une application pour le compte du laboratoire de recherche ERIC de l'un
 L'application permet aux chercheurs d'uploader des fichiers CSV sur le serveur afin d'effectuer des opérations de modélisation et d'OLAP dessus.
 Les fichiers pris en compte sont : CSV, XLS, XLSX. (la convertion se fera automatiquement)
 
-TODO:
--Upload multiple.
+TODO:<br>
+-Upload multiple.<br>
 -Fichier ODS, HTML.
