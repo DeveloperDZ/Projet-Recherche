@@ -6,5 +6,3 @@ L'application permet aux chercheurs d'uploader des fichiers CSV sur le serveur, 
 
 Les fichiers pris en compte sont : CSV, XLS, XLSX, HTML. (la convertion se fera automatiquement en CSV)
 
-TODO:<br>
--Fichier ODS.
