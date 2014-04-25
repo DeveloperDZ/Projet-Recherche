@@ -3,8 +3,11 @@
   include 'xlsFile.php';
   include 'xlsxFile.php';
   include 'htmlFile.php';
+  include 'odsFile.php';
   require_once('PHPExcel/Classes/PHPExcel.php');
+  include 'PHPExcel/Classes/PHPExcel/Writer/Excel2007.php';
   include 'excel_reader2.php';
+  include "easyODS.php";
 ?>
 <!doctype html>
 <html lang="fr">
@@ -66,25 +69,29 @@
     switch ($extension_upload) {
       case 'csv':
         $upCSV = new csvFile($fileName, $size);
-        $upCSV::uploadFile($file, $path);
+        $upCSV->uploadFile($file, $path);
         break;
       
       case 'xls':
         $upXSL = new xlsFile($fileName, $size);
-        $upXSL::convertXlsToCsv($file, $fileName);
+        $upXSL->convertXlsToCsv($file, $fileName);
         break;
 
       case 'xlsx':
         $upXSLX = new xlsxFile($fileName, $size);
-        $upXSLX::convertXlsxToCsv($file, $fileName);
+        $upXSLX->convertXlsxToCsv($file, $fileName);
         break;
         
       case 'html':
-          $upHTML = new htmlFile($fileName, $size);
-          $upHTML::convertHtmlToCsv($file, $fileName);
+        $upHTML = new htmlFile($fileName, $size);
+        $upHTML->convertHtmlToCsv($file, $fileName);
+        break;
 
+      case 'ods':
+        $upODS = new odsFile($file, $size);
+        $upODS->convertOdsToXlsx($file, $fileName);
+        break;
 
-          break;
       default:
         # code...
         break;

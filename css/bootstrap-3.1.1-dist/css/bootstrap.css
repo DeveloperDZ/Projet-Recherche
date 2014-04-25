@@ -18,7 +18,8 @@ html {
   margin : auto;
   padding:5px 8px; 
   border: 1px #D3D3D3;
-  border-radius: 5px;
+  background-image: linear-gradient(#E5E5E5, #CFCFCF);
+box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7); 
   background-color: rgba(231, 231, 231, 231);
   border-collapse: collapse;;
   border-spacing:90px 50px;
