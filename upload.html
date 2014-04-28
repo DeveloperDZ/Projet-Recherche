@@ -71,6 +71,8 @@ $(document).ready(function()
 	$("#fileuploader").uploadFile({
 	url:"uploadFile.php",
 	multiple:true,
+	allowedTypes: "csv,xls,ods,html,xlsx" , 
+	extErrorStr:"n'est pas autorisé. Extensions autorisées:",
 	fileName:"fichier"
 	});
 });
